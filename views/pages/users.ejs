@@ -1,0 +1,9 @@
+<h1>Users list</h1>
+
+<ul>
+  <% users.forEach(user => { %>
+    <li>
+      <%= user.fullName %> — <%= user.emailAddress %>
+    </li>
+  <% }) %>
+</ul>
