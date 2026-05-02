@@ -42,6 +42,7 @@
     "_": true,
     "bowser": true,
     "StripeCheckout": true,
+    "axios": "readonly",
     "Stripe": true,
     "Vue": true,
     "VueRouter": true,

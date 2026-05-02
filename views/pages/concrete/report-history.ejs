@@ -1,4 +1,36 @@
-<div class="container py-4">
-  <h1><%= pageTitle %></h1>
-  <p>Здесь будет история расчётов и отчётов.</p>
+<div id="report-history" class="container mt-5 mb-5" v-cloak>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="border-bottom border-dark pb-2 text-dark font-weight-bold">История анализов</h1>
+            <p class="lead text-muted mt-3">
+                На данной странице отображается история выполненных фрактальных анализов.
+                Пользователь может просматривать ранее загруженные изображения и
+                результаты их обработки.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark rounded-0">
+                <div class="card-header bg-dark text-white font-weight-bold">
+                    <h5 class="mb-0">Список отчетов</h5>
+                </div>
+
+                <div class="card-body p-0">
+                    <ul id="reportsList" class="list-group list-group-flush">
+                        <li class="list-group-item border-dark rounded-0 text-center text-muted p-5 bg-light">
+                            <i class="fa fa-folder-open fa-3x mb-3 text-dark"></i>
+                            <h6 class="text-dark font-weight-bold">Нет доступных отчетов</h6>
+                            <p class="mb-0 small">Здесь появятся ваши результаты после первого анализа.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>

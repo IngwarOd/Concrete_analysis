@@ -45,55 +45,56 @@
   </head>
   <body>
     <div purpose="page-wrap">
-      <header class="navbar navbar-expand-sm navbar-dark bg-dark flex-column flex-md-row justify-content-between" purpose="page-header">
-        <a style="cursor: pointer;" class="navbar-brand mr-0" href="/"><img style="height: 20px;" class="logo" alt="NEW_APP_NAME logo" src="/images/logo.png"/></a>
-        <div class="navbar-nav flex-row">
-          <!-- LOGGED-IN NAVIGATION -->
-          <% if(me) { %>
-            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact">Help</a>
+        <header class="navbar navbar-expand-sm navbar-dark bg-dark flex-column flex-md-row justify-content-between" purpose="page-header">
+            <a style="cursor: pointer;" class="navbar-brand mr-0" href="/"><img style="height: 20px;" class="logo" alt="NEW_APP_NAME logo" src="/images/logo.png"/></a>
+            <div class="navbar-nav flex-row">
+                <% if(me) { %>
+                    <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact"><%= i18n('Help') %></a>
 
-            <!-- Concrete analysis menu (desktop) -->
-            <div class="nav-item dropdown d-none d-sm-block">
-              <a class="nav-link dropdown-toggle" id="header-concrete-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Concrete analysis
-              </a>
-              <div class="dropdown-menu" aria-labelledby="header-concrete-menu-link">
-                <a class="dropdown-item" href="/concrete/fractal-dashboard">Fractal dashboard</a>
-                <a class="dropdown-item" href="/concrete/slices-analysis">Slices analysis</a>
-                <a class="dropdown-item" href="/concrete/report-history">Report history</a>
-              </div>
+                    <div class="nav-item dropdown d-none d-sm-block">
+                        <a class="nav-link dropdown-toggle" id="header-concrete-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <%= i18n('Concrete analysis') %>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="header-concrete-menu-link">
+                            <a class="dropdown-item" href="/concrete/fractal-dashboard"><%= i18n('Fractal dashboard') %></a>
+                            <a class="dropdown-item" href="/concrete/slices-analysis"><%= i18n('Slices analysis') %></a>
+                            <a class="dropdown-item" href="/concrete/report-history"><%= i18n('Report history') %></a>
+                        </div>
+                    </div>
+
+                    <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/concrete/fractal-dashboard"><%= i18n('Fractal dashboard') %></a>
+                    <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/concrete/slices-analysis"><%= i18n('Slices analysis') %></a>
+                    <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/concrete/report-history"><%= i18n('Report history') %></a>
+
+                    <div class="nav-item dropdown d-none d-sm-block">
+                        <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= i18n('Account') %></a>
+                        <div style="left: auto; right: 0;" class="dropdown-menu" aria-labelledby="header-account-menu-link">
+                            <a class="dropdown-item" href="/account"><%= i18n('Settings') %></a>
+                            <a class="dropdown-item" href="/logout"><%= i18n('Sign out') %></a>
+                        </div>
+                    </div>
+
+                    <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/account"><%= i18n('Account Settings') %></a>
+                    <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/logout"><%= i18n('Sign out') %></a>
+                <% } else { %>
+                    <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/faq"><%= i18n('FAQ') %></a>
+                    <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/login"><%= i18n('Log in') %></a>
+                    <div class="form-inline d-none ml-2 d-md-block" >
+                        <a class="btn btn-outline-info" href="/signup"><%= i18n('Sign up') %></a>
+                    </div>
+                    <a class="nav-item nav-link text-info ml-2 d-block d-md-none" href="/signup"><%= i18n('Sign up') %></a>
+                <% } %>
+                    <div class="nav-item dropdown ml-2">
+                        <a class="nav-link dropdown-toggle" id="lang-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            🌐 </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="lang-menu-link">
+                            <a class="dropdown-item" onclick="changeLanguage('en')">English</a>
+                            <a class="dropdown-item" onclick="changeLanguage('ru')">Русский</a>
+                            <a class="dropdown-item" onclick="changeLanguage('uk')">Українська</a>
+                        </div>
+                    </div>
             </div>
-
-            <!-- Concrete analysis links (mob) -->
-            <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/concrete/fractal-dashboard">Fractal dashboard</a>
-            <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/concrete/slices-analysis">Slices analysis</a>
-            <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/concrete/report-history">Report history</a>
-
-            <!-- Only in desktop nav -->
-            <div class="nav-item dropdown d-none d-sm-block">
-              <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
-              <div style="left: auto; right: 0;" class="dropdown-menu" aria-labelledby="header-account-menu-link">
-                <a class="dropdown-item" href="/account">Settings</a>
-                <a class="dropdown-item" href="/logout">Sign out</a>
-              </div>
-            </div>
-
-            <!-- Only in mob nav -->
-            <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/account">Account Settings</a>
-            <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/logout">Sign out</a>
-          <% } else { %>
-          <!-- LOGGED-OUT NAVIGATION -->
-          <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/faq">FAQ</a>
-          <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/login">Log in</a>
-          <!-- Only in desktop nav -->
-          <div class="form-inline d-none ml-2 d-md-block" >
-            <a class="btn btn-outline-info" href="/signup">Sign up</a>
-          </div>
-          <!-- Only in mobile nav -->
-          <a class="nav-item nav-link text-info ml-2 d-block d-md-none" href="/signup">Sign up</a>
-          <% } %>
-        </div>
-      </header>
+        </header>
 
       <!-- Alert if email has not been confirmed -->
       <% if(me&&me.emailChangeCandidate) { %>
@@ -138,6 +139,15 @@
     <%/* Stripe.js */%>
     <script src="https://js.stripe.com/v3/"></script>
 
+
+    <script>
+      function changeLanguage(lang) {
+        //coockies
+        document.cookie = "user_locale=" + lang + "; path=/; max-age=31536000";
+        // reloading page, so sails can apply new language
+        window.location.reload();
+      }
+    </script>
     <% /* Delete the global `self` to help avoid client-side bugs.
     (see https://developer.mozilla.org/en-US/docs/Web/API/Window/self) */ %>
     <script>delete window.self;</script>
@@ -168,9 +178,13 @@
     <script src="/js/components/modal.component.js"></script>
     <script src="/js/components/stripe-card-element.component.js"></script>
     <script src="/js/utilities/open-stripe-checkout.js"></script>
+    <script src="/js/page.js"></script>
     <script src="/js/pages/account/account-overview.page.js"></script>
     <script src="/js/pages/account/edit-password.page.js"></script>
     <script src="/js/pages/account/edit-profile.page.js"></script>
+    <script src="/js/pages/concrete/fractal-dashboard.page.js"></script>
+    <script src="/js/pages/concrete/report-history.page.js"></script>
+    <script src="/js/pages/concrete/slices-analysis.page.js"></script>
     <script src="/js/pages/contact.page.js"></script>
     <script src="/js/pages/dashboard/welcome.page.js"></script>
     <script src="/js/pages/entrance/confirmed-email.page.js"></script>
@@ -255,4 +269,7 @@
     </script>
 
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/page.js"></script>
 </html>

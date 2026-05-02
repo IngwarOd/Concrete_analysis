@@ -1,4 +1,54 @@
-<div class="container py-4">
-  <h1><%= pageTitle %></h1>
-  <p>Здесь будет анализ срезов бетона.</p>
+<div id="slices-analysis" class="container mt-5 mb-5" v-cloak>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="border-bottom border-dark pb-2 text-dark font-weight-bold">Детальный анализ среза</h1>
+            <p class="lead text-muted mt-3">
+                На данной странице представлены результаты детального анализа
+                выбранного изображения бетонного среза.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card border-dark rounded-0 h-100">
+                <div class="card-header bg-dark text-white font-weight-bold">
+                    <h5 class="mb-0">Параметры анализа</h5>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-dark rounded-0 bg-transparent">
+                            <i class="fa fa-angle-right mr-2"></i> Фрактальная размерность
+                        </li>
+                        <li class="list-group-item border-dark rounded-0 bg-transparent">
+                            <i class="fa fa-angle-right mr-2"></i> Плотность структуры
+                        </li>
+                        <li class="list-group-item border-bottom-0 rounded-0 bg-transparent">
+                            <i class="fa fa-angle-right mr-2"></i> Характер распределения пор
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8 mb-4">
+            <div class="card border-dark rounded-0 h-100">
+                <div class="card-header bg-dark text-white font-weight-bold">
+                    <h5 class="mb-0">Визуализация</h5>
+                </div>
+                <div class="card-body d-flex flex-column bg-light">
+                    <div class="flex-grow-1 d-flex align-items-center justify-content-center border border-dark p-5" style="border-style: dashed !important; min-height: 300px;">
+                        <div class="text-center text-muted">
+                            <i class="fa fa-chart-area fa-3x mb-3 text-dark"></i>
+                            <p class="mb-0">Здесь будет отображено обработанное изображение и графики анализа.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>

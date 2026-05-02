@@ -38,7 +38,9 @@ module.exports.routes = {
   'GET /dashboard': { action: 'dashboard/view-dashboard' },
   'GET /profile': { action: 'account/view-profile' },
   'GET /users': { action: 'admin/view-users' },
-
+  'post /upload-image': 'ImagehandlerController.upload', // первичная загрузка
+  'POST /save-analysis': 'ImagehandlerController.saveAnalysis', // запись в бд и приминение фильтров трашхолд
+  'POST /api/v1/concrete/analyze': { action: 'concrete/analyze-fractal' },
   'GET /concrete/fractal-dashboard': { action: 'concrete/view-fractal-dashboard' },
   'GET /concrete/slices-analysis':   { action: 'concrete/view-slices-analysis' },
   'GET /concrete/report-history':    { action: 'concrete/view-report-history' },

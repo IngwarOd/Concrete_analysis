@@ -20,8 +20,7 @@ module.exports.i18n = {
   *                                                                          *
   ***************************************************************************/
 
-  locales: ['en', 'es', 'fr', 'de'],
-
+  locales: ['en', 'ru', 'uk'],
   /****************************************************************************
   *                                                                           *
   * What is the default locale for the site? Note that this setting will be   *
@@ -31,15 +30,16 @@ module.exports.i18n = {
   *                                                                           *
   ****************************************************************************/
 
-  // defaultLocale: 'en',
-
+  defaultLocale: 'en',
+  cookie: 'user_locale', // cookies
   /****************************************************************************
   *                                                                           *
   * Path (relative to app root) of directory to store locale (translation)    *
   * files in.                                                                 *
   *                                                                           *
   ****************************************************************************/
-
+  // само обновлять словари
+  updateFiles: false,
   // localesDirectory: 'config/locales'
 
 };

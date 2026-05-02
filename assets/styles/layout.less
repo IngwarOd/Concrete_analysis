@@ -57,3 +57,8 @@ body.detected-mobile {
     }
   }
 }
+/* Принудительно включаем курсор-руку для всех элементов навигации в верхнем меню */
+header[purpose="page-header"] .nav-link,
+header[purpose="page-header"] .dropdown-item {
+  cursor: pointer !important;
+}

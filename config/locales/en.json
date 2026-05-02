@@ -1,4 +1,16 @@
 {
   "Welcome": "Welcome",
-  "A brand new app.": "A brand new app."
+  "A brand new app.": "A brand new app.",
+  "Help": "Help",
+  "Concrete analysis": "Concrete analysis",
+  "Fractal dashboard": "Fractal dashboard",
+  "Slices analysis": "Slices analysis",
+  "Report history": "Report history",
+  "Account": "Account",
+  "Settings": "Settings",
+  "Sign out": "Sign out",
+  "Account Settings": "Account Settings",
+  "FAQ": "FAQ",
+  "Log in": "Log in",
+  "Sign up": "Sign up"
 }
